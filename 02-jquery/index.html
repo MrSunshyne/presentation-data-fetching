@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetching</title>
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Inria+Sans:wght@400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="joke-container">
+        <h1>Chuck Norris Jokes</h1>
+        <div id="jokes">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae rem nesciunt rerum at fugiat magni animi sed ipsam quia velit voluptatem qui, id aspernatur veritatis ea. Nesciunt quasi consectetur quibusdam?</div>
+        <button onclick="fetchJokes()" id="fetch-jokes">Fetch Jokes</button>
+    </div>
+    <script>
+        function fetchJokes() {
+            $.get('https://api.chucknorris.io/jokes/random', function(data) {
+                $('#jokes').html(data.value);
+            });
+        }
+    </script>
+</body>
+</html>
